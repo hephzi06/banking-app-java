@@ -14,7 +14,7 @@ public class Bank {
     int age;
     String fullName ;
 
-    long mainAmount = 0l;
+    long mainAmount = 0L;
     short pin ;
 
     public void createAccount(){
@@ -32,16 +32,34 @@ public class Bank {
         System.out.print("Age:   ");
         age = createAccount.nextInt();
         fullName = firstName + " " +  secondName+ " " + middleName + " ";
-        if(gender.equals("male") || gender.equals("female") && phone.length() == 11 && age > 5){
-            System.out.println("Your account is pending just wait a little to be verified");
-            System.out.println("----------------------------------------------------------- \n" +
-                    "You have been Verified");
-            intro();
+        if(phone.length() != 11 && !gender.equals("male") || !gender.equals("female") && age <5){
+            System.out.println("Error: Check for =>  Phone number is more than or less than 11, Gender is not male or female, Age is less than 5");
+            createAccount();
+        }
+        else if(phone.length() != 11){
+            System.out.println("Error: Either Phone number is more tor less than 11 digit \n");
+            createAccount();
 
-        }else{
+        }else if(!gender.equals("male") || !gender.equals("female")){
+            System.out.println("Error: Gender should be either male or female \n");
+            createAccount();
+        }else if( age <5){
+            System.out.println("Error: Age should be greater than 5");
+            createAccount();
+        }else if(gender.equals("male") || gender.equals("female") && phone.length() == 11 && age > 5){
+            verification();
+         }
+
+        else{
             System.out.println("Sorry you were not verified but Thanks for coming to Hephzi bank");
         }
 
+    }
+    public void verification(){
+        System.out.println("Your account is pending just wait a little to be verified");
+        System.out.println("----------------------------------------------------------- \n" +
+                "You have been Verified");
+        intro();
     }
     public void intro(){
         Scanner intro = new Scanner(System.in);
