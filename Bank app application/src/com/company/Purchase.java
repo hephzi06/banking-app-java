@@ -10,6 +10,7 @@ public class Purchase {
 //    }
 
 
+
         int[] randomNumber = new int[999999999];
         for (int i = 100000000; i <= randomNumber.length; i++) {
             randomNumber[i] = (int) (Math.random() * 999999999);
@@ -17,5 +18,9 @@ public class Purchase {
         }
 
 
+
+
     }
+
+
 }

@@ -28,35 +28,35 @@ public class Bank {
         System.out.print("Middle name:   ");
         middleName = createAccount.nextLine();
         System.out.print("Phone Number:   ");
-        do {
+
+        while (true){
             phone = createAccount.nextLine();
-            if (form_input == form_trial){
+            if(phone.length() == 11){
+                break;
+            }else if (form_input == form_trial){
                 System.out.println("Sorry the program has been terminated");
                 System.exit(0);
 
-            }else if(phone.length() == 11){
-                break;
-            }else{
+            } else{
                 System.out.println("You have " + form_trial + " chances");
                 System.out.println("Phone Number should be 11 digit e.g 09012345678 ");
                 System.out.print("Phone Number:   ");
 
             }
             form_trial--;
-
-
         }
-        while (true);
+        form_trial = 3;
         System.out.print("Gender:   ");
-        do {
+
+        while (true){
             gender = createAccount.nextLine().toLowerCase();
-            if (form_input == form_trial){
+            if(gender.equals("male") || gender.equals("female")){
+                break;
+            }else if (form_input == form_trial){
                 System.out.println("Sorry the program has been terminated");
                 System.exit(0);
 
-            }else if(gender.equals("male") || gender.equals("female")){
-                break;
-            }else{
+            } else{
                 System.out.println("You have " + form_trial + " chances");
                 System.out.println("Gender should be male or female ");
                 System.out.print("Gender:   ");
@@ -66,20 +66,19 @@ public class Bank {
 
 
         }
-        while (true);
 
-
+        form_trial = 3;
 
         System.out.print("Age:   ");
-        do {
+        while (true){
             age = createAccount.nextInt();
-            if (form_input == form_trial){
+            if(age > 5){
+                break;
+            }else if (form_input == form_trial){
                 System.out.println("Sorry the program has been terminated");
                 System.exit(0);
 
-            }else if(age > 5){
-                break;
-            }else{
+            } else{
                 System.out.println("You have " + form_trial + " chances");
                 System.out.println("Age should be greater than 5");
                 System.out.print("Age:   ");
@@ -89,7 +88,6 @@ public class Bank {
 
 
         }
-        while (true);
         fullName = firstName + " " +  secondName+ " " + middleName + " ";
        if(gender.equals("male") || gender.equals("female") && phone.length() == 11 && age > 5){
             System.out.println("Your account is pending just wait a little to be verified");
@@ -188,7 +186,10 @@ public class Bank {
         }
         mainAmount= (long) transferNewAmount;
 
+
     }
+
 }
 // createPin();
 //
+

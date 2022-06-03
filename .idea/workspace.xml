@@ -4,7 +4,9 @@
     <list default="true" id="c3febb65-4207-44bc-9505-066e2ac105aa" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Bank app application/src/com/company/Bank.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bank app application/src/com/company/Bank.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Bank app application/src/com/company/Purchase.java" beforeDir="false" afterPath="$PROJECT_DIR$/Bank app application/src/com/company/Purchase.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/banking-app-java/com/company/Bank.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/banking-app-java/com/company/Bank.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/banking-app-java/com/company/Purchase.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/banking-app-java/com/company/Purchase.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
