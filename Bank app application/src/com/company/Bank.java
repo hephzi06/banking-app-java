@@ -16,6 +16,8 @@ public class Bank {
 
     long mainAmount = 0L;
     short pin ;
+    byte form_input = 0;
+    byte form_trial = 3;
 
     public void createAccount(){
         Scanner createAccount = new Scanner(System.in);
@@ -26,35 +28,81 @@ public class Bank {
         System.out.print("Middle name:   ");
         middleName = createAccount.nextLine();
         System.out.print("Phone Number:   ");
-        phone = createAccount.nextLine();
-        System.out.print("Gender:   ");
-        gender = createAccount.nextLine();
-        System.out.print("Age:   ");
-        age = createAccount.nextInt();
-        fullName = firstName + " " +  secondName+ " " + middleName + " ";
-        if(phone.length() != 11 && !gender.equals("male") || !gender.equals("female") && age <5){
-            System.out.println("Error: Check for =>  Phone number is more than or less than 11, Gender is not male or female, Age is less than 5");
-            createAccount();
+        do {
+            phone = createAccount.nextLine();
+            if (form_input == form_trial){
+                System.out.println("Sorry the program has been terminated");
+                System.exit(0);
+
+            }else if(phone.length() == 11){
+                break;
+            }else{
+                System.out.println("You have " + form_trial + " chances");
+                System.out.println("Phone Number should be 11 digit e.g 09012345678 ");
+                System.out.print("Phone Number:   ");
+
+            }
+            form_trial--;
+
+
         }
-        else if(phone.length() != 11){
-            System.out.println("Error: Either Phone number is more tor less than 11 digit \n");
-            createAccount();
+        while (true);
+        System.out.print("Gender:   ");
+        do {
+            gender = createAccount.nextLine().toLowerCase();
+            if (form_input == form_trial){
+                System.out.println("Sorry the program has been terminated");
+                System.exit(0);
 
-        }else if(!gender.equals("male") || !gender.equals("female")){
-            System.out.println("Error: Gender should be either male or female \n");
-            createAccount();
-        }else if( age <5){
-            System.out.println("Error: Age should be greater than 5");
-            createAccount();
-        }else if(gender.equals("male") || gender.equals("female") && phone.length() == 11 && age > 5){
-            verification();
-         }
+            }else if(gender.equals("male") || gender.equals("female")){
+                break;
+            }else{
+                System.out.println("You have " + form_trial + " chances");
+                System.out.println("Gender should be male or female ");
+                System.out.print("Gender:   ");
 
-        else{
+            }
+            form_trial--;
+
+
+        }
+        while (true);
+
+
+
+        System.out.print("Age:   ");
+        do {
+            age = createAccount.nextInt();
+            if (form_input == form_trial){
+                System.out.println("Sorry the program has been terminated");
+                System.exit(0);
+
+            }else if(age > 5){
+                break;
+            }else{
+                System.out.println("You have " + form_trial + " chances");
+                System.out.println("Age should be greater than 5");
+                System.out.print("Age:   ");
+
+            }
+            form_trial--;
+
+
+        }
+        while (true);
+        fullName = firstName + " " +  secondName+ " " + middleName + " ";
+       if(gender.equals("male") || gender.equals("female") && phone.length() == 11 && age > 5){
+            System.out.println("Your account is pending just wait a little to be verified");
+            System.out.println("----------------------------------------------------------- \n" +
+                    "You have been Verified");
+            intro();
+
+        }else{
             System.out.println("Sorry you were not verified but Thanks for coming to Hephzi bank");
         }
 
     }
+
     public void verification(){
         System.out.println("Your account is pending just wait a little to be verified");
         System.out.println("----------------------------------------------------------- \n" +
